@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define MAX 100
 
+//Add a value to array
 void AddArr(double *n, int pos)
 {
     if (pos > 99)
@@ -15,6 +16,7 @@ void AddArr(double *n, int pos)
     }
 }
 
+// search a value of array
 void SearchArr(double *n, int pos)
 {
     double checkVal;
@@ -32,27 +34,29 @@ void SearchArr(double *n, int pos)
     switch (numVal)
     {
     case 0:
-        printf("None of the elements in the array that has the value of %lf.\n", checkVal);
+        printf("None of the elements in the array that has the value of %.2lf.\n", checkVal);
         break;
 
     case 1:
-        printf("There is ONE element in the array that has the value of %lf.\n", checkVal);
+        printf("There is ONE element in the array that has the value of %.2lf.\n", checkVal);
         break;
 
     default:
-        printf("There are %d elements in the array that have the value of %lf.\n", numVal, checkVal);
+        printf("There are %d elements in the array that have the value of %.2lf.\n", numVal, checkVal);
     }
 }
 
+//Print out the array 
 void PrtArr(double *n, int pos)
 {
     printf("Array: \n");
     for (int i = 0; i <= pos; i++)
     {
-        printf("\tn[%d] = %lf;\n", i, n[i]);
+        printf("\tn[%d] = %.2lf;\n", i, n[i]);
     }
 }
 
+//print out values in a range
 void PrtRangeArr(double *n, int pos)
 {
     int minVal, maxVal;
@@ -79,12 +83,13 @@ void PrtRangeArr(double *n, int pos)
         {
             if (n[i] >= minVal && n[i] <= maxVal)
             {
-                printf("\t\tn[%d] = %lf\n", i, n[i]);
+                printf("\t\tn[%d] = %.2lf\n", i, n[i]);
             }
         }
     }
 }
 
+// Print out the array in ascending order
 void AscArr(double *n, int pos)
 {
     double t;
@@ -107,9 +112,10 @@ void AscArr(double *n, int pos)
             }
         }
 
-        printf("\t%lf\n", m[i]);
+        printf("\t%.2lf\n", m[i]);
     }
 }
+
 int main() {
 
     int select;
@@ -123,8 +129,8 @@ int main() {
         printf("3 - Print out the array. \n");
         printf("4 - Print out values in a range.\n");
         printf("5 - Print out the array in ascending order.\n");
-        printf("6 - Quit.\n\t");
-        scanf("%d", &select);
+        printf("6 - Quit.\n");
+        printf("Select your option : "); scanf("%d", &select);
         
         switch (select)
         {
